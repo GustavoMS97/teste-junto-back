@@ -1,10 +1,10 @@
 const mongoose = require("mongoose");
 
 mongoose.connect(
-  "mongodb+srv://GUSTAVOMS97:Gu4525214@cluster0-gvhbx.mongodb.net/junto-backend?retryWrites=true&w=majority",
+  process.env.MONGO_URL || "mongodb://mongodb0.example.com:27017/junto-backend",
   { useNewUrlParser: true, useUnifiedTopology: true }
 );
-// mongodb://mongodb0.example.com:27017/junto-backend
+//
 mongoose.Promise = global.Promise;
 mongoose.set("useFindAndModify", false);
 
